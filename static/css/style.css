@@ -7,9 +7,10 @@
 }
 
 * {
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
+	list-style: none;
 }
 
 body {
@@ -27,6 +28,10 @@ body {
 		'sans-serif';
 }
 
+.container-fluid {
+	background-color: black;
+}
+
 header {
 	width: 100%;
 	height: 100px;
@@ -40,10 +45,14 @@ header {
 	left: 0;
 	z-index: 999;
 	/* background-color: aqua; */
-	background-color: black;
+	background-color: rgb(39, 65, 0);
 }
 
 header ul {}
+
+header h1 {
+	line-height: 100px;
+}
 
 header li {
 	float: left;
@@ -63,64 +72,39 @@ header li a :visited {
 }
 
 .banner {
-	height: 500px;
+	height: 800px;
 	width: 100%;
 	margin-top: 100px;
-	padding-top: 80px;
+	/* padding-top: 80px; */
 	padding-left: 50px;
+	display: flex;
+	/* position: relative; */
+	background-color: rgb(39, 65, 0);
+	justify-content: space-between;
 }
 
-.banner p {
+.banner ul {
+	margin: 0;
+	padding: 0;
+	line-height: 800px;
+}
+
+.banner ul .a {
+	font-size: 80px;
+}
+
+.banner ul .b {
 	font-size: 30px;
 	margin-top: 30px;
 }
 
-.banner h1 {
-	font-size: 80px;
-}
-
-.video-bg {
-	height: 700px;
-	width: auto;
-	background-color: rgba(0, 0, 255, 0.24);
-	display: flex;
-	/* justify-content: space-between; */
-}
-
-.video-bg li {
+.banner ul li {
 	list-style: none;
-	margin-bottom: 15px;
 }
 
-.video-bg ul li:first-child {
-	margin-top: 50px;
-}
-
-.video-bg a {
-	font-size: 30px;
-	text-decoration: none;
-	color: white;
-}
-
-.video-bg a :visited {
-	color: none;
-
-}
-
-.video-bg video {
-	margin-right: 50px;
-}
-
-
-
-.plt1 {
-	height: 500px;
-	width: 100%;
-	background-color: rgba(255, 255, 255, 0.363);
-}
-
-.plt {
-	height: 500px;
-	width: 100%;
-	background-color: blueviolet;
+.banner video {
+	/* margin-right: 50px; */
+	/* position: absolute;
+	top: 0;
+	right: 0; */
 }

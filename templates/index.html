@@ -20,16 +20,10 @@
 {% endblock %}
 {% block content %}
 <section class="banner">
-    <h1>Click-through rate</h1>
-    <p>資料範圍：2021年～2023年</p>
-</section>
-{% endblock %}
-{% block video %}
-
-<section class="video-bg">
-    <video autoplay loop muted src="{{ url_for('static',filename='video/葬送のフリーレンPV第2弾.mp4') }}"></video>
     <ul>
-        <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=35241">葬送的芙莉蓮</a></li>
+        <li class="a">Click-through rate</li>
+        <li class="b">資料範圍：2021年～2023年</li>
     </ul>
+    <video autoplay loop muted src="{{ url_for('static',filename='video/葬送のフリーレンPV第2弾.mp4') }}"></video>
 </section>
 {% endblock %}
