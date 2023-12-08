@@ -1,5 +1,5 @@
-{% extends "base_navigation.html" %}
-{% block title %}Flask_Dash{% endblock %}
+{% extends "base.html" %}
+{% block title %}Click-through rate{% endblock %}
 {% block head %}
 {{ super() }}
 <style>
@@ -18,8 +18,17 @@
     @media (min-width: 1400px) {}
 </style>
 {% endblock %}
-{% block content %}<h1>Flask_Dash</h1>
-<div id="content-lg">{{super()}}</div>{% endblock %}
-{% block footer %}
-&copy; Copyright 2008 by <a href="https://flask-dash-web-0zgq.onrender.com">123456</a>.
+{% block content %}
+<section class="banner">
+    <h1>Click-through rate</h1>
+    <p>資料範圍：2021年～2023年</p>
+</section>
+{% endblock %}
+{% block video %}
+<section class="video-bg">
+    <video autoplay loop muted src="../Flask網頁/TVアニメ『葬送のフリーレン』PV第2弾／毎週金曜よる11時放送 (1080p).mp4 (1080p).mp4"></video>
+    <ul>
+        <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=35241">葬送的芙莉蓮</a></li>
+    </ul>
+</section>
 {% endblock %}

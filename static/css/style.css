@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/* CSS Document */
+@font-face {
+	font-family: '圓體';
+	src: url(./jf-openhuninn-2.0.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+	color: white;
+	font-family: '圓體',
+		'Madefor',
+		'Helvetica Neue',
+		'Helvetica',
+		'Arial',
+		'メイリオ',
+		'meiryo',
+		'ヒラギノ角ゴ pro w3',
+		'hiragino kaku gothic pro',
+		'sans-serif';
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	display: flex;
+	padding-right: 50px;
+	padding-left: 50px;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	/* background-color: aqua; */
+	background-color: black;
+}
+
+header ul {}
+
+header li {
+	float: left;
+	list-style: none;
+	margin-right: 30px;
+}
+
+header li a {
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	/* font-family:'圓體'; */
+}
+
+header li a :visited {
+	color: none;
+}
+
+.banner {
+	height: 500px;
+	width: 100%;
+	margin-top: 100px;
+	padding-top: 80px;
+	padding-left: 50px;
+}
+
+.banner p {
+	font-size: 30px;
+	margin-top: 30px;
+}
+
+.banner h1 {
+	font-size: 80px;
+}
+
+.video-bg {
+	height: 700px;
+	width: auto;
+	background-color: rgba(0, 0, 255, 0.24);
+	display: flex;
+	/* justify-content: space-between; */
+}
+
+.video-bg li {
+	list-style: none;
+	margin-bottom: 15px;
+}
+
+.video-bg ul li:first-child {
+	margin-top: 50px;
+}
+
+.video-bg a {
+	font-size: 30px;
+	text-decoration: none;
+	color: white;
+}
+
+.video-bg a :visited {
+	color: none;
+
+}
+
+.video-bg video {
+	margin-right: 50px;
+}
+
+
+
+.plt1 {
+	height: 500px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.363);
+}
+
+.plt {
+	height: 500px;
+	width: 100%;
+	background-color: blueviolet;
+}
