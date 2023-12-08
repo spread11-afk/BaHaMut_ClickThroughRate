@@ -25,8 +25,9 @@
 </section>
 {% endblock %}
 {% block video %}
+
 <section class="video-bg">
-    <video autoplay loop muted src="../Flask網頁/TVアニメ『葬送のフリーレン』PV第2弾／毎週金曜よる11時放送 (1080p).mp4 (1080p).mp4"></video>
+    <video autoplay loop muted src="{{ url_for('static',filename='video/葬送のフリーレンPV第2弾.mp4') }}"></video>
     <ul>
         <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=35241">葬送的芙莉蓮</a></li>
     </ul>
