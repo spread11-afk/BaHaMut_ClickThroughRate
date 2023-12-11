@@ -72,7 +72,7 @@ header li a :visited {
 }
 
 .banner {
-	height: 800px;
+	height: 600px;
 	width: 100%;
 	margin-top: 100px;
 	/* padding-top: 80px; */
@@ -86,7 +86,6 @@ header li a :visited {
 .banner ul {
 	margin: 0;
 	padding: 0;
-	line-height: 800px;
 }
 
 .banner ul .a {
@@ -100,11 +99,10 @@ header li a :visited {
 
 .banner ul li {
 	list-style: none;
+	z-index: 5;
 }
 
 .banner video {
-	/* margin-right: 50px; */
-	/* position: absolute;
-	top: 0;
-	right: 0; */
+	z-index: 1;
+
 }
