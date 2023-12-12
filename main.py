@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('2020.html')
 
 # if __name__ == "__main__":
 #     run_simple("localhost", 8080, application,use_debugger=True,use_reloader=True)

@@ -8,24 +8,49 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='js/bootstrap.bundle.js') }}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css') }}">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}anime Awards{% endblock %}</title>
     {% endblock %}
 </head>
 
 <body>
     {% block nav %}
-    <header>
-        <h1>Anime</h1>
+    <nav class="top">
+        <h1>anime Awards</h1>
         <ul>
-            <li><a href="">呈現1</a></li>
-            <li><a href="">呈現2</a></li>
-            <li><a href="">呈現3</a></li>
-            <li><a href="">呈現4</a></li>
-            <li><a href="">呈現5</a></li>
+            <li><a href="">2020年</a></li>
+            <li><a href="">2021年</a></li>
+            <li><a href="">2022年</a></li>
+            <li><a href="">2023年</a></li>
         </ul>
+    </nav>
+    {% endblock %}
+    {% block header %}
+    <header>
+        <h1>Genre Awards</h1>
     </header>
     {% endblock %}
     {% block content %}
+    <div class="container">
+        <section class="tag">
+            <h2>Action</h2>
+            <p class="jujutsu"> <img src="{{url_for('static', filename='images/呪術.png')}}" alt=""></p>
+            <h5>Nominees</h5>
+            <div class="action">
+                <div class="card">
+                    <div class="itemsize">
+                        <div class="itemimage" style="background-image: url(../static/images/呪術.png)"></div>
+                        <div class="imagetitle"><span>咒術迴戰</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="itemsize">
+                        <div class="itemimage" style="background-image: url(../static/images/呪術.png)"></div>
+                        <div class="imagetitle"><span>咒術迴戰</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     {% endblock %}
 
     <script src="{{ url_for('static',filename='js/bootstrap.bundle.js') }}">
