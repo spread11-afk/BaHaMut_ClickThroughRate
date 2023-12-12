@@ -1,0 +1,26 @@
+.my-div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: transform 0.3s ease-in-out;
+    /* 為了平滑過渡 */
+}
+
+.my-div:hover {
+    animation-name: hideAnimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(100px, 100px);
+        /* 移動到特定位置 */
+    }
+}
