@@ -11,10 +11,11 @@
     justify-content: left;
 }
 
-.showmessage {
+.showselect {
     background-color: rgba(165, 42, 42, 0.411);
     padding: 0;
     width: auto;
+    text-align:left;
 }
 
 .row {

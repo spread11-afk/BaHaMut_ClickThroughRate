@@ -4,45 +4,48 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 
 dash2 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-dash2.title = "台北市youbike及時資料"
+dash2.title = "BaHaMutAnime"
 df = pd.read_csv('BaHaMut_9.csv')
 df1 = df.reset_index()
 dash2.layout = html.Div(
     [
-        dbc.Container([
-            html.Div([
-                html.Div([
-                    html.H1("BaHaMutAnime")
-                ], className="title")
-            ],
-                className="title-row",
-                style={"paddingTop": '2rem'}),
-            html.Div([
-                html.Div([
-                    dash_table.DataTable(
-                        id='main_table',
-                        data=df1.to_dict('records'),
-                        columns=[{'id': column, 'name': column}
-                                 for column in df1.columns],
-                        page_size=30,
-                        # style_table={'height': '800px', 'overflowY': 'auto'},
-                        fixed_rows={'headers': True},
-                        row_selectable="single",
-                        selected_rows=[]
-                    ),
-                ], className="main")
-            ],
-                className="main-row",
-                style={"paddingTop": '2rem'}),
-            html.Div([
-                html.Div(className="col", id='showMessage')
-            ],
-                className="row",
-                style={"paddingTop": '2rem'})
 
-        ])
+        html.Div([
+            html.Div([
+                html.H1("BaHaMutAnime")
+            ], className="title")
+        ],
+            className="title-row",
+            style={"paddingTop": '2rem'}),
+        html.Div([
+            html.Div([
+                dash_table.DataTable(
+                    id='main_table',
+                    data=df1.to_dict('records'),
+                    columns=[{'id': column, 'name': column}
+                             for column in df1.columns],
+                    sort_action='native',  # 启用原生排序功能
+                    sort_mode='multi',
+                    style_cell={'whiteSpace':'normal','textAlign':'left'},
+                    page_size=30,
+                    # style_table={'height': '800px', 'overflowY': 'auto'},
+                    fixed_rows={'headers': True},
+                    row_selectable="single",
+                    selected_rows=[]
+                ),
+            ], className="main")
+        ],
+            className="main-row",
+            style={"paddingTop": '2rem'}),
+        html.Div([
+            html.Div(className="showselect", id='showMessage')
+        ],
+            className="maincontainer",
+            style={"paddingTop": '2rem'})
+
+
     ],
-    className="container-lg"
+    className="mycontainer"
 )
 
 
