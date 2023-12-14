@@ -3,23 +3,19 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 import pandas as pd
 
-dash2 = Dash(requests_pathname_prefix="/dash/app2/",
-             external_stylesheets=[dbc.themes.BOOTSTRAP])
+dash2 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 dash2.title = "台北市youbike及時資料"
 df = pd.read_csv('BaHaMut_9.csv')
-
-# lastest_df = pd.DataFrame(lastest_data,columns=['站點名稱','更新時間','行政區','地址','總數','可借','可還'])
 df1 = df.reset_index()
-
 dash2.layout = html.Div(
     [
         dbc.Container([
             html.Div([
                 html.Div([
                     html.H1("BaHaMutAnime")
-                ], className="col text-center")
+                ], className="title")
             ],
-                className="row",
+                className="title-row",
                 style={"paddingTop": '2rem'}),
             html.Div([
                 html.Div([
@@ -28,28 +24,15 @@ dash2.layout = html.Div(
                         data=df1.to_dict('records'),
                         columns=[{'id': column, 'name': column}
                                  for column in df1.columns],
-                        page_size=20,
-                        style_table={'height': '300px', 'overflowY': 'auto'},
+                        page_size=30,
+                        # style_table={'height': '800px', 'overflowY': 'auto'},
                         fixed_rows={'headers': True},
-                        style_cell_conditional=[
-                            {'if': {'column_id': 'index'},
-                             'width': '5%'
-                             },
-                            {'if': {'column_id': '站點名稱'},
-                             'width': '25%'},
-                            {'if': {'column_id': '總數'},
-                             'width': '5%'},
-                            {'if': {'column_id': '可借'},
-                             'width': '5%'},
-                            {'if': {'column_id': '可還'},
-                             'width': '5%'},
-                        ],
                         row_selectable="single",
                         selected_rows=[]
                     ),
-                ], className="col text-center")
+                ], className="main")
             ],
-                className="row",
+                className="main-row",
                 style={"paddingTop": '2rem'}),
             html.Div([
                 html.Div(className="col", id='showMessage')
