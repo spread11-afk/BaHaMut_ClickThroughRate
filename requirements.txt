@@ -4,3 +4,4 @@ pandas
 flask
 dash
 gunicorn
+dash_bootstrap_components

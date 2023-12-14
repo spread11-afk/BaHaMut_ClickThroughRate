@@ -1,11 +1,11 @@
-from dash import Dash, html,dash_table,Input,Output,callback
+from dash import Dash, html, dash_table, Input, Output, callback, dcc, State
 import pandas as pd
 import dash_bootstrap_components as dbc
-from . import datasource
 import pandas as pd
 
 dash2 = Dash(requests_pathname_prefix="/dash/app2/",external_stylesheets=[dbc.themes.BOOTSTRAP])
 dash2.title = "台北市youbike及時資料"
+df = pd.read_csv('BaHaMut_9.csv')
 lastest_data = datasource.lastest_datetime_data()
 lastest_df = pd.DataFrame(lastest_data,columns=['站點名稱','更新時間','行政區','地址','總數','可借','可還'])
 lastest_df1 = lastest_df.reset_index()
@@ -70,7 +70,11 @@ def selectedRow(selected_rows:list[int]):
     if len(selected_rows) != 0:
         print("執行")
         oneSite:pd.DataFrame = lastest_df1.iloc[[selected_rows[0]]]
-        oneTable:dash_table.DataTable =  dash_table.DataTable(oneSite.to_dict('records'), [{"name": i, "id": i} for i in oneSite.columns])
+        oneTable:dash_table.DataTable =  dash_table.DataTable(oneSite.to_dict('records'), [{"name": i, "id": i} for i in oneSite.columns])                                                                                                                                                      
         return [oneTable]
     
-    # return None
+    return None
+
+
+if __name__ == "__main__":
+    dash2.run(host='127.0.0.1', port=8050, debug=True)
