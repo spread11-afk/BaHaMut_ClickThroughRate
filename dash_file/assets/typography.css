@@ -3,46 +3,66 @@
     src: url(./jf-openhuninn-2.0.ttf);
 }
 
-.text-center {
-    background-color: blueviolet;
-}
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: '圓體';
+    justify-content: left;
 }
 
-.titele {
-    text-align: center;
-    background-color: aquamarine;
+.showmessage {
+    background-color: rgba(165, 42, 42, 0.411);
+    padding: 0;
+    width: auto;
 }
 
-.titele-row {
+.row {
+    background-color: bisque;
+}
+
+.titlename {
     text-align: center;
-    background-color: aquamarine;
+    background-color: rgba(255, 127, 127, 0.295);
+}
+
+.title-row {
+    text-align: center;
+    background-color: rgba(161, 127, 255, 0.295);
 }
 
 .main {
     text-align: center;
-    height: 900px;
+    width: 100%;
+    background-color: rgba(0, 204, 255, 0.26);
+    padding: 0;
+    margin: 0;
+    text-align: left;
 }
 
 .main-row {
-    height: 900px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background-color: rgba(226, 116, 43, 0.322);
+    justify-content: left;
+    text-align: left;
 }
 
-.container {
+maincontainer {
+    width: 100%;
+}
+
+/* .container {
     background-color: aqua;
     height: 1000px;
-}
+} */
 
-.container-lg {
-    background-color: black;
+.mycontainer {
+    /* background-color: black; */
     width: 100%;
 }
 
 body {
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.459);
 }
