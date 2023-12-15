@@ -6,16 +6,17 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: '圓體';
-    justify-content: left;
+    box-sizing: border-box !important;
+    font-family: '圓體' !important;
 }
+
+
 
 .showselect {
     background-color: rgba(165, 42, 42, 0.411);
     padding: 0;
     width: auto;
-    text-align:left;
+    text-align: left;
 }
 
 .row {
@@ -38,7 +39,7 @@
     background-color: rgba(0, 204, 255, 0.26);
     padding: 0;
     margin: 0;
-    text-align: left;
+    text-align:center;
 }
 
 .main-row {
@@ -47,7 +48,7 @@
     width: auto;
     background-color: rgba(226, 116, 43, 0.322);
     justify-content: left;
-    text-align: left;
+    text-align:center;
 }
 
 maincontainer {
@@ -66,4 +67,6 @@ maincontainer {
 
 body {
     background-color: rgba(127, 255, 212, 0.459);
+    max-width: 1400px;
+    margin: 0 auto;
 }
