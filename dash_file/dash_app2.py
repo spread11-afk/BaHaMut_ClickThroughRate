@@ -3,6 +3,7 @@ import dash
 import pandas as pd
 import dash_bootstrap_components as dbc
 import pandas as pd
+import base64
 
 dash2 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 dash2.title = "BaHaMutAnime"
@@ -47,7 +48,7 @@ dash2.layout = html.Div(
         dbc.Modal(
             [
                 dbc.ModalHeader(dbc.ModalTitle("Header")),
-                dbc.ModalBody(id="modal-content"),
+                dbc.ModalBody([html.H1('123123')], id="modal-content"),
             ],
             id="modal",
             is_open=False,
@@ -78,13 +79,15 @@ def selectedRow(selected_rows: list[int]):
 @callback(
     Output("modal-content", "children"),
     Output("modal", "is_open"),
-    Input("main_table", "selected_rows"),
-
+    # Input("modal-content", "children"),
+    Input("main_table", "active_cell")
 )
 def update_graphs(active_cell):
+    image_filename = '../static/images/史萊姆.png'
+    encoded_image = base64.b64encode(open(image_filename, 'rb').read()).decode('utf-8')
     if active_cell and active_cell["column_id"] == "動畫名":
-        cell_data = df.iloc[active_cell["row"]][active_cell["column_id"]]
-        return f'Data: "{cell_data}"', True
+        cell_data = html.Div([html.Img(src=f"data:image/png;base64,{encoded_image}", style={'width': '100%'})])
+        return cell_data, True
     return dash.no_update, False
 
 
