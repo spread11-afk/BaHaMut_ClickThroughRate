@@ -1,4 +1,5 @@
 from dash import Dash, html, dash_table, Input, Output, callback, dcc, State
+import dash
 import pandas as pd
 import dash_bootstrap_components as dbc
 import pandas as pd
@@ -42,7 +43,15 @@ dash2.layout = html.Div(
             html.Div(className="showselect", id='showMessage')
         ],
             className="maincontainer",
-            style={"paddingTop": '2rem'})
+            style={"paddingTop": '2rem'}),
+        dbc.Modal(
+            [
+                dbc.ModalHeader(dbc.ModalTitle("Header")),
+                dbc.ModalBody(id="modal-content"),
+            ],
+            id="modal",
+            is_open=False,
+        )
 
 
     ],
@@ -64,6 +73,19 @@ def selectedRow(selected_rows: list[int]):
         return [oneTable]
 
     return None
+
+
+@callback(
+    Output("modal-content", "children"),
+    Output("modal", "is_open"),
+    Input("main_table", "selected_rows"),
+
+)
+def update_graphs(active_cell):
+    if active_cell and active_cell["column_id"] == "動畫名":
+        cell_data = df.iloc[active_cell["row"]][active_cell["column_id"]]
+        return f'Data: "{cell_data}"', True
+    return dash.no_update, False
 
 
 if __name__ == "__main__":
