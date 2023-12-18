@@ -147,19 +147,16 @@ def clickBtn(n_clicks: None | int, inputValue: str):
     global df
     if n_clicks is not None:
         # 一定先檢查有沒有按button
-        dff = df[df['動畫名']==inputValue]
-        dff['動畫名'] = dff['動畫名']
+        dff = df[df['動畫名'] == inputValue]
         print("按確定")
-        return df.to_dict('records'), [{'id': column, 'name': column} for column in df.columns], []
+        return dff.to_dict('records'), [{'id': column, 'name': column} for column in df.columns], []
 
-    # n_clicks is None
+    n_clicks is None
     # 代表第一次啟動
     print("第一次啟動")
-    # current_data = datasource.lastest_datetime_data()
-    df = pd.read_csv('BaHaMut_9.csv')
-    df['動畫名'] = df['動畫名']
+    dff = df[df['動畫名'] == inputValue]
     print("按確定")
-    return df.to_dict('records'), [{'id': column, 'name': column} for column in df.columns], []
+    return dff.to_dict('records'), [{'id': column, 'name': column} for column in df.columns], []
 
 
 selected_row = None
