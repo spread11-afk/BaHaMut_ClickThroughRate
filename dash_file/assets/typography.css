@@ -10,7 +10,9 @@
     font-family: '圓體' !important;
 }
 
-
+.title {
+    color: rgba(255, 208, 0, 0.89);
+}
 
 .showselect {
     /* background-color: rgba(165, 42, 42, 0.411); */
@@ -70,11 +72,14 @@ body {
     background-color: black;
     max-width: 1400px;
     margin: 0 auto;
-    color: rgba(255, 208, 0, 0.89);
+    /* color: rgba(255, 208, 0, 0.89); */
 }
 
 
-.modalsize {}
+.modalsize {
+    max-height: 800px;
+    max-width: 1200px;
+}
 
 .infotitle {
     background-color: black;
@@ -83,4 +88,14 @@ body {
 
 .info {
     display: flex;
+    background-color: black;
+}
+
+.infoimage {
+    height: auto;
+    width: auto;
+}
+
+p {
+    color: rgba(0, 238, 255, 0.842);
 }
