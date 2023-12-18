@@ -6,7 +6,8 @@ import pandas as pd
 import base64
 
 
-image_filename = 'assets/suraimu.png'
+image_filename = './assets/suraimu.png'
+
 
 def b64_image(image_filename):
     with open(image_filename, 'rb') as f:
@@ -51,8 +52,9 @@ dash2.layout = html.Div(
             style={"paddingTop": '2rem'}),
         html.Div([
             html.Div(className="showselect",
-                     id='showMessage'), 
-            html.Img(src=b64_image('assets/suraimu.png'))
+                     id='showMessage'),
+            html.Img(src=(
+                './assets/images/attack.png'))
         ],
             className="maincontainer",
             style={"paddingTop": '2rem'}),
@@ -62,15 +64,15 @@ dash2.layout = html.Div(
                 dbc.ModalBody([html.H1('123123')], id="modal-content"),
             ],
             id="modal",
+            className='modalsize',
             is_open=False,
+            size='lg'
         )
 
 
     ],
     className="mycontainer"
 )
-
-
 
 
 @callback(
@@ -94,7 +96,7 @@ page_current = 0
 
 
 @callback(
-    Output("modal-content", "children"),
+    Output("modal", "children"),
     Output("modal", "is_open"),
     Input("main_table", "active_cell"),
     State("main_table", "page_current")
@@ -110,10 +112,8 @@ def update_graphs(active_cell, page_current):
         if page_current == None:
             page_current = 0
         selected_row = active_cell["row"] + page_current * 20
-        info = df.loc[selected_row][active_cell["column_id"]]
-    # cell_data = html.Img(src='../static/images/史萊姆.png')
-        if info == "關於我轉生變成史萊姆這檔事 第二季":
-            info = html.H1('關於我轉生變成史萊姆這檔事 第二季')
+        info = dbc.ModalHeader(dbc.ModalTitle("關於我轉生變成史萊姆這檔事 第二季"),class_name='infotitle'), html.Div([html.Img(src='assets/suraimu.png'),
+                                                                              html.P('三上悟過著不起眼的人生，在隨機殺人魔肆虐下結束了三十七年生涯…… 看似如此。當他甦醒時，不僅眼睛看不見，就連耳朵也聽不到…… 面對一連串突發狀況，他意識到自己投胎轉世成「史萊姆」！儘管變成最弱魔物讓他頗有怨言，三上悟還是決定要快樂地過史萊姆生活，沒想到卻碰上天災級魔物「暴風龍維爾德拉」，命運就此出現巨大轉折──維爾德拉將他命名為「利姆路」，正要展開史萊姆式的異世界新生活時，卻被捲入哥布靈對牙狼族的紛爭之中，最後還莫名其妙當上魔物大王…… 能奪取對手能力的「捕食者」以及精通世界真理的「大賢者」，有這兩項特殊技能當武器，最強的史萊姆傳說正式展開！ STAFF 原作：川上泰樹、伏瀨、みっ')],className='info')
         return info, True
     return dash.no_update, False
 
