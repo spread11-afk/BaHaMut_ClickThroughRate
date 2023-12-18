@@ -6,6 +6,14 @@ import pandas as pd
 import base64
 
 
+image_filename = 'assets/suraimu.png'
+
+def b64_image(image_filename):
+    with open(image_filename, 'rb') as f:
+        image = f.read()
+    return 'data:image/png;base64,' + base64.b64decode(image).decode('utf-8')
+
+
 dash2 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 dash2.title = "BaHaMutAnime"
 df = pd.read_csv('BaHaMut_9.csv')
@@ -43,7 +51,8 @@ dash2.layout = html.Div(
             style={"paddingTop": '2rem'}),
         html.Div([
             html.Div(className="showselect",
-                     id='showMessage'), html.Img(src=dash.get_asset_url('史萊姆.png'))
+                     id='showMessage'), 
+            html.Img(src=b64_image('assets/suraimu.png'))
         ],
             className="maincontainer",
             style={"paddingTop": '2rem'}),
@@ -60,6 +69,8 @@ dash2.layout = html.Div(
     ],
     className="mycontainer"
 )
+
+
 
 
 @callback(
