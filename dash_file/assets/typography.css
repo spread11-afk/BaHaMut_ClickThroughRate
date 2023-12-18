@@ -13,40 +13,41 @@
 
 
 .showselect {
-    background-color: rgba(165, 42, 42, 0.411);
+    /* background-color: rgba(165, 42, 42, 0.411); */
     padding: 0;
     width: auto;
     text-align: left;
 }
 
 .row {
-    background-color: bisque;
+    /* background-color: bisque; */
 }
 
 .titlename {
     text-align: center;
-    background-color: rgba(255, 127, 127, 0.295);
+    /* background-color: rgba(255, 127, 127, 0.295); */
 }
 
 .title-row {
     text-align: center;
-    background-color: rgba(161, 127, 255, 0.295);
+    /* background-color: rgba(161, 127, 255, 0.295); */
 }
 
 .main {
     text-align: center;
     width: 100%;
-    background-color: rgba(0, 204, 255, 0.26);
+    /* background-color: rgba(0, 204, 255, 0.26); */
     padding: 0;
     margin: 0;
     text-align: center;
+    overflow-y: hidden;
 }
 
 .main-row {
     margin: 0;
     padding: 0;
     width: auto;
-    background-color: rgba(226, 116, 43, 0.322);
+    /* background-color: rgba(226, 116, 43, 0.322); */
     justify-content: left;
     text-align: center;
 }
