@@ -54,8 +54,8 @@ dash2.layout = html.Div(
                                 'textAlign': 'center'},
                     style_cell_conditional=[
                         {'if': {'column_id': '動畫名'}, 'width': '190px'}, {'if': {'column_id': '年份'}, 'width': '75px'}, {'if': {'column_id': '月份'}, 'width': '75px'}, {'if': {'column_id': '集數'}, 'width': '75px'}, {'if': {'column_id': '星級'}, 'width': '75px'}, {'if': {'column_id': '評分人數'}, 'width': '50px'}, {'if': {'column_id': '導演監督'}, 'width': '80px'}, {'if': {'column_id': '製作廠商'}, 'width': '85px'}, {'if': {'column_id': '作品分類1'}, 'width': '50px'}, {'if': {'column_id': '作品分類2'}, 'width': '50px'}, {'if': {'column_id': '作品分類3'}, 'width': '50px'}, {'if': {'column_id': '作品分類4'}, 'width': '50px'}, {'if': {'column_id': '作品分類5'}, 'width': '50px'}, {'if': {'column_id': '作品分類6'}, 'width': '50px'}, {'if': {'column_id': '原作載體'}, 'width': '50px'}, {'if': {'column_id': '新續作'}, 'width': '65px'}, {'if': {'column_id': '平均觀看數(萬)'}, 'width': '75px'}, {'if': {'column_id': '總觀看數(萬)'}, 'width': '75px'}, {'backgroundColor': '#000'}, {'color': 'white'}],
-                    page_size=20,
-                    # style_table={'height': '800px', 'overflowY': 'hidden'},
+                    page_size=8,
+                    # style_table={'overflowY':'hidden'},
                     fixed_rows={'headers': True},
                     row_selectable="single",
                     selected_rows=[]
@@ -64,6 +64,41 @@ dash2.layout = html.Div(
         ],
             className="main-row",
             style={"paddingTop": '2rem'}),
+
+        html.Div([
+            html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/jujutsu.png')], className='itemimage'), html.A([html.Span(['咒術迴戰'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=18626", target="_blank")
+                          ], className='itemsize')
+            ], className='card'),
+            html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/spy.png')], className='itemimage'), html.A([html.Span(['SPY×FAMILY 間諜家家酒'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=28798", target="_blank")
+                          ], className='itemsize')
+            ], className='card'),
+            html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/attack.png')], className='itemimage'), html.A([html.Span(['進擊的巨人 The Final Season'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=19849", target="_blank")
+                          ], className='itemsize')
+            ], className='card'),
+            html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/suraimu.png')], className='itemimage'), html.A([html.Span(['關於我轉生變成史萊姆這檔事 第二季'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=20530", target="_blank")
+                          ], className='itemsize')
+            ], className='card'),
+            html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/musyoku.png')], className='itemimage'), html.A([html.Span(['無職轉生，到了異世界就拿出真本事'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=20620", target="_blank")
+                          ], className='itemsize')
+            ], className='card'),
+            html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/re0.png')], className='itemimage'), html.A([html.Span(['Re：從零開始的異世界生活 第二季'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=16344", target="_blank")
+                          ], className='itemsize')
+            ], className='card'),
+            html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/86.png')], className='itemimage'), html.A([html.Span(['86－不存在的戰區－'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=22245", target="_blank")
+                          ], className='itemsize')
+            ], className='card'), html.Div([
+                html.Div([html.Div([html.Img(src='assets/images/kimetsu.png')], className='itemimage'), html.A([html.Span(['鬼滅之刃 遊郭篇'], className='imagetitle')], className='imageurl', href="https://ani.gamer.com.tw/animeVideo.php?sn=26850", target="_blank")
+                          ], className='itemsize')
+            ], className='card')
+        ], className='action'),
+
         html.Div([
             html.Div(className="showselect",
                      id='showMessage')
@@ -107,16 +142,16 @@ def selectedRow(selected_rows):
         # print(df.iloc[active_cell["row"], df.columns.get_loc(active_cell["column_id"])])
         if df.iloc[selected_rows[0]][0] == '關於我轉生變成史萊姆這檔事 第二季':
             info = html.Div([html.Div(html.A([html.Img(src='assets/images/suraimu2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=20530", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
-                             html.H3(['三上悟過著不起眼的人生，在隨機殺人魔肆虐下結束了三十七年生涯…… 看似如此。當他甦醒時，不僅眼睛看不見，就連耳朵也聽不到…… 面對一連串突發狀況，他意識到自己投胎轉世成「史萊姆」！儘管變成最弱魔物讓他頗有怨言，三上悟還是決定要快樂地過史萊姆生活，沒想到卻碰上天災級魔物「暴風龍維爾德拉」，命運就此出現巨大轉折──維爾德拉將他命名為「利姆路」，正要展開史萊姆式的異世界新生活時，卻被捲入哥布靈對牙狼族的紛爭之中，最後還莫名其妙當上魔物大王…… 能奪取對手能力的「捕食者」以及精通世界真理的「大賢者」，有這兩項特殊技能當武器，最強的史萊姆傳說正式展開！'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')
+                             html.H3(['三上悟過著不起眼的人生，在隨機殺人魔肆虐下結束了三十七年生涯…… 看似如此。當他甦醒時，不僅眼睛看不見，就連耳朵也聽不到…… 面對一連串突發狀況，他意識到自己投胎轉世成「史萊姆」！儘管變成最弱魔物讓他頗有怨言，三上悟還是決定要快樂地過史萊姆生活，沒想到卻碰上天災級魔物「暴風龍維爾德拉」，命運就此出現巨大轉折──維爾德拉將他命名為「利姆路」，正要展開史萊姆式的異世界新生活時，卻被捲入哥布靈對牙狼族的紛爭之中，最後還莫名其妙當上魔物大王…… 能奪取對手能力的「捕食者」以及精通世界真理的「大賢者」，有這兩項特殊技能當武器，最強的史萊姆傳說正式展開！'], style={'marginTop': '25px', 'color': 'white'}, className='infotext')], style={'padding': '15px'})], className='info')
         elif df.iloc[selected_rows[0]][0] == '咒術迴戰':
             info = html.Div([html.Div(html.A([html.Img(src='assets/images/jujutsu2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=18626", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
-                                                                                                                                                                                                                         html.H3(['虎杖悠仁是一位體育萬能的高中生，某天他為了從「咒物」危機中解救學長姊，而吞下了詛咒的手指，讓「宿儺」這種詛咒跟自己合而為一。之後他加入了專門培養咒術師的學校「咒術高專」，並遇到了伏黑惠與釘崎野薔薇這兩位同學。某日，突然出現「特級咒物」，他們三人就奉命到現場支援。為了實現爺爺要他「助人」的遺言，虎杖將會繼續與「詛咒」奮鬥下去。'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')
+                                                                                                                                                                                                        html.H3(['虎杖悠仁是一位體育萬能的高中生，某天他為了從「咒物」危機中解救學長姊，而吞下了詛咒的手指，讓「宿儺」這種詛咒跟自己合而為一。之後他加入了專門培養咒術師的學校「咒術高專」，並遇到了伏黑惠與釘崎野薔薇這兩位同學。某日，突然出現「特級咒物」，他們三人就奉命到現場支援。為了實現爺爺要他「助人」的遺言，虎杖將會繼續與「詛咒」奮鬥下去。'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')
         elif df.iloc[selected_rows[0]][0] == 'SPY×FAMILY 間諜家家酒':
             info = html.Div([html.Div(html.A([html.Img(src='assets/images/spy2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=28798", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
                              html.H3(['每一個人都擁有不想讓任何人看見得自己的一面―― 位在世界各國於檯面下進行激烈情報戰的時代。東國與西國已經維持了數十年的冷戰狀態。所屬西國情報局對東課 <WISE> 厲害的間諜〈黃昏〉，為了前往找尋被譽為是會威脅到東西國和平的危險人物，東國的國家統一黨總裁 唐納文・戴斯蒙德 所正在籌備的戰爭計畫，被賦予了一項極秘任務。其名稱為 Operation〈梟〉。內容講述「在一週內組建家庭，並潛入戴斯蒙德兒子所就讀的學校吧」。但是，他所遇到的「女兒」是會讀心的超能力者、「妻子」則是暗殺者！為了互相的利益而成為家庭，決定在隱藏真實身分的情況下共同生活的 3 人。世界的和平就託付即將發生一系列事件的暫定的家庭…？'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')
         elif df.iloc[selected_rows[0]][0] == '進擊的巨人 The Final Season':
             info = html.Div([html.Div(html.A([html.Img(src='assets/images/attack2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=19849", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
-                             html.H3(['《進擊的巨人》的故事描述百年前世界莫名出現神秘的巨人怪物，不斷殘忍食人，人類幾乎無法與之對抗，最後人類建造了三道寬 3 公尺、高 50 公尺的高聳圍牆，百年來未有巨人攻破，人們漸漸習慣牆內的生活，麻木於和平，害怕冒險與改變，直到 845 年，最外層的瑪利亞之牆，被身高超過 60m 的超大型巨人，踢破城牆，無數巨人湧入城鎮，親眼見到母親被巨人一口咬碎的慘劇的艾連，發誓要消滅所有巨人。最後一季的劇情，主要是在描述艾倫一行人在發現了牆外不只有巨人，更有另一個發達許多的國家「瑪雷」後，將正式與人類開戰。故事時間軸將跳到了巨人 13 年任期將滿的五至六年後，新的瑪雷戰士不只已開始選拔，帕拉迪島上的艾倫更因為擁有始祖巨人，即將和世界各國展開前所未有的戰爭。'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')
+                             html.H3(['《進擊的巨人》的故事描述百年前世界莫名出現神秘的巨人怪物，不斷殘忍食人，人類幾乎無法與之對抗，最後人類建造了三道寬 3 公尺、高 50 公尺的高聳圍牆，百年來未有巨人攻破，人們漸漸習慣牆內的生活，麻木於和平，害怕冒險與改變，直到 845 年，最外層的瑪利亞之牆，被身高超過 60m 的超大型巨人，踢破城牆，無數巨人湧入城鎮，親眼見到母親被巨人一口咬碎的慘劇的艾連，發誓要消滅所有巨人。最後一季的劇情，主要是在描述艾倫一行人在發現了牆外不只有巨人，更有另一個發達許多的國家「瑪雷」後，將正式與人類開戰。故事時間軸將跳到了巨人 13 年任期將滿的五至六年後，新的瑪雷戰士不只已開始選拔，帕拉迪島上的艾倫更因為擁有始祖巨人，即將和世界各國展開前所未有的戰爭。'], style={'marginTop': '25px', 'color': 'white'}, className='infotext')], style={'padding': '15px'})], className='info')
         elif df.iloc[selected_rows[0]][0] == '無職轉生，到了異世界就拿出真本事':
             info = html.Div([html.Div(html.A([html.Img(src='assets/images/musyoku2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=20620", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
                              html.H3(['《無職轉生 ~到了異世界就拿出真本事~》是在小說投稿網站「小説家になろう」進行發表，累積人氣獲得第一名的冒險奇幻小說。故事描述著被趕出家門的 34 歲的無職處男的尼特族，因遭遇車禍而失去生命。在保有前世記憶的狀況下，轉生到了異世界。在這個劍與魔法的世界獲得第二次人生的他，反省自己的過去，並決定這次一定要認真地過活。'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')

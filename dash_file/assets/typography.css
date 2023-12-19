@@ -37,25 +37,29 @@
 
 .main {
     text-align: center;
-    width: 100%;
+    width: auto;
+    height: 700px;
     /* background-color: rgba(0, 204, 255, 0.26); */
     padding: 0;
     margin: 0;
     text-align: center;
     overflow-y: hidden;
+    max-height: 1500px;
 }
 
 .main-row {
     margin: 0;
     padding: 0;
     width: auto;
+    height: 700px;
     /* background-color: rgba(226, 116, 43, 0.322); */
     justify-content: left;
     text-align: center;
 }
 
 maincontainer {
-    width: 100%;
+    width: auto;
+    height: auto;
 }
 
 /* .container {
@@ -64,21 +68,21 @@ maincontainer {
 } */
 
 .mycontainer {
-    /* background-color: black; */
+    background-color: rgba(0, 0, 0, 0.418);
     width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 body {
     background-color: black;
-    max-width: 1400px;
-    margin: 0 auto;
-    /* color: rgba(255, 208, 0, 0.89); */
 }
 
 
 .modalsize {
     max-height: 800px;
     max-width: 1200px;
+    border: 1px solid #ccc;
 }
 
 .infotitle {
@@ -96,6 +100,73 @@ body {
     width: auto;
 }
 
-p {
-    color: rgba(0, 238, 255, 0.842);
+.infotext {}
+
+.action {
+    max-width: 1400px;
+    display: flex;
+    background: no-repeat center/cover;
+}
+
+.card {
+    width: 100%;
+    transform-origin: center center;
+    transition: all 1s;
+    border: none;
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0.274);
+}
+
+
+.itemsize {
+    position: relative;
+    margin: 2px;
+    height: 300px;
+    /* width: 300px; */
+    overflow: hidden;
+}
+
+.itemimage {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* width: 100%;
+    height: 100%; */
+    background: no-repeat center/cover;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.imageurl {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+    height: 300px;
+    /* z-index: 10; */
+    opacity: 1;
+    transition: opacity 300ms;
+    background-color: rgba(0, 0, 0, 0.459);
+    color: #f5f5f5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.imagetitle {
+    /* display: block; */
+    /* line-height: 300px; */
+    text-align: center;
+}
+
+.imageurl:hover {
+    opacity: 0;
 }
