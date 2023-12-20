@@ -74,6 +74,12 @@ maincontainer {
     margin: 0 auto;
 }
 
+.moviebox{display: flex;}
+
+.trailer{width: 50%;}
+
+.movie{max-width: 700px;}
+
 body {
     /* background-color: black; */
 }
