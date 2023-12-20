@@ -51,7 +51,7 @@
     margin: 0;
     padding: 0;
     width: auto;
-    height: 700px;
+    height: 550px;
     /* background-color: rgba(226, 116, 43, 0.322); */
     justify-content: left;
     text-align: center;
@@ -162,10 +162,13 @@ body {
 }
 
 .imagetitle {
-    /* display: block; */
-    /* line-height: 300px; */
-    text-align: center;
+    display: flex;
+    height: 300px;
+    align-items: center;
+    /* text-align: center; */
+    justify-content: center;
 }
+
 
 .imageurl:hover {
     opacity: 0;

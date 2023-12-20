@@ -170,6 +170,9 @@ def selectedRow(selected_rows):
         elif df.iloc[selected_rows[0]][0] == '機動戰士鋼彈 水星的魔女 Season 2':
             info = html.Div([html.Div(html.A([html.Img(src='assets/images/suisei2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=33292", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
                              html.H3(['在星元122年——眾多企業擴展到宇宙並構築巨大經濟圈的時代有一名少女．蘇蕾塔，自邊境地區「水星」，轉來至MS產業的最大企業「貝納里特集團」旗下所經營的「阿斯提卡西亞高等專門學園」。作為米奧琳涅的未婚夫、作為鋼彈公司的一員，度過了充滿相遇和刺激的學園生活。從恐怖攻擊事件過去了兩個星期，蘇萊塔在學校期待與米奧琳涅的重逢，每天過著充實的生活；另一方面，米奧琳涅留在貝納里特集團總部，守護著父親的狀況。種種的新困難向兩人襲來，讓她們不得不做出抉擇。少女們將懷著各自的情感，面對鋼彈帶來的強大詛咒。'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')
+        elif df.iloc[selected_rows[0]][0] == '叫我對大哥 (TV版)':
+            info = html.Div([html.Div(html.A([html.Img(src='assets/images/ore2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=23349", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
+                             html.H3(['以 おぷうのきょうだい所著漫畫為原著改編的動畫《老子是、津島（暫譯，俺、つしま）》，描述一位實際上是老婆婆、卻被稱為「老爺爺」（田中真弓配音演出）的老人，與眾多貓咪日常的漫畫，並以某天忽然出現在老爺爺家庭院的一隻貓「津島（大塚明夫配音演出）」為中心。預定將推出的動畫作品由 青木純執導，動畫公司則交由曾推出有《劇場版 角落小夥伴 繪本中的秘密》的 Fanworks 與 SPACE NEKO COMPANY 聯手製作。'], style={'marginTop': '25px', 'color': 'white'})], style={'padding': '15px'})], className='info')
         else:
             info = dbc.ModalHeader(dbc.ModalTitle(
                 "尚未更新資料"), class_name='infotitle')
@@ -185,20 +188,23 @@ def selectedRow(selected_rows):
 #     [State('input_value', 'value')]
 # )
 # def clickBtn(n_clicks: None | int, inputValue: str):
-#     global df
-#     if n_clicks is not None:
-#         # 一定先檢查有沒有按button
-#         dff = df[df['動畫名'] == inputValue]
-#         print(dff.to_dict('records'), [
-#               {'id': column, 'name': column} for column in dff.columns])
-#         return dff.to_dict('records'), [{'id': column, 'name': column} for column in dff.columns], []
+#     #     global df
+#     if n_clicks:
+#         if inputValue:
+#             #         # 一定先檢查有沒有按button
+#             dff = df[df['動畫名'] == inputValue]
+#             print(dff)
+#             return dff.to_dict('records'), [{'id': column, 'name': column} for column in df.columns], []
+#         else:
+#             # 如果沒有輸入值，可能要進行其他處理，或是回傳預設值
+#             return [], [], []
+#     # return [], [], []
 
 #     n_clicks is None
 #     # 代表第一次啟動
 #     print("第一次啟動")
-#     dff = df[df['動畫名'] == inputValue]
 #     print("按確定")
-#     return dff.to_dict('records'), [{'id': column, 'name': column} for column in df.columns], []
+#     return df.to_dict('records'), [{'id': column, 'name': column} for column in df.columns], []
 
 
 selected_row = None
