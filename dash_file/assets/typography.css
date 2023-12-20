@@ -48,10 +48,10 @@
 }
 
 .main-row {
-    margin: 0;
+    margin-bottom: 15px;
     padding: 0;
     width: auto;
-    height: 550px;
+    height: 600px;
     /* background-color: rgba(226, 116, 43, 0.322); */
     justify-content: left;
     text-align: center;
@@ -68,14 +68,14 @@ maincontainer {
 } */
 
 .mycontainer {
-    background-color: rgba(0, 0, 0, 0.418);
+    /* background-color: rgba(0, 0, 0, 0.418); */
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 body {
-    background-color: black;
+    /* background-color: black; */
 }
 
 
@@ -86,13 +86,13 @@ body {
 }
 
 .infotitle {
-    background-color: black;
+    /* background-color: black; */
     color: rgba(255, 208, 0, 0.89);
 }
 
 .info {
     display: flex;
-    background-color: black;
+    /* background-color: black; */
 }
 
 .infoimage {
