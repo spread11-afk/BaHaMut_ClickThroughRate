@@ -101,7 +101,8 @@ dash2.layout = html.Div(
             id="modal",
             className='modalsize',
             is_open=False,
-            size='lg'
+            size='lg',
+            style={'border': 'none'}
         )
 
 
