@@ -107,6 +107,7 @@ maincontainer {
     /* background-color: aqua; */
     justify-content: right;
     padding-left: 40px;
+    border-radius: 20px;
 }
 
 body {
