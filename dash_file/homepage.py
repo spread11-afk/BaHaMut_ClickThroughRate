@@ -18,7 +18,8 @@ def b64_image(image_filename):
 dash2 = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 dash2.title = "BaHaMutAnime"
 df = pd.read_csv('BaHaMut_9.csv')
-dash2.layout = html.Div([html.Div([html.Div([html.H1("BaHaMutAnime")], className="title")],className="title-row",style={"paddingTop": '2rem'}),html.Div([html.Div(['AnimeTrailer'],className='trailer'),html.Div([html.Video(src='assets/movies/葬送のフリーレン.mp4',autoPlay=True,muted=True,loop=True)],className='movie')],className='moviebox')],className="mycontainer")
+dash2.layout = html.Div([html.Div([html.Div(['AnimeTrailer'], className='trailer'), html.Div(
+    [html.Video(src='assets/movies/葬送のフリーレン.mp4', autoPlay=True, muted=True, loop=True, width='100%', height='100%')], className='movie')], className='moviebox')], className="mycontainer1")
 
 
 if __name__ == "__main__":
