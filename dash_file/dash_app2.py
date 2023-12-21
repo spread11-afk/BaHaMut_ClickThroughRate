@@ -122,13 +122,6 @@ def selectedRow(selected_rows):
         print(df.iloc[selected_rows[0]][0])
         oneSite: pd.DataFrame = df.iloc[[selected_rows[0]]],
         oneSite = oneSite[0]
-        # oneTable: dash_table.DataTable = dash_table.DataTable(
-        #     oneSite.to_dict('records'), [{"name": i, "id": i} for i in oneSite.columns], style_cell={'whiteSpace': 'normal', 'textAlign': 'center'})
-        # for i in oneSite:
-        #     print(i)
-        # print(type(oneSite))
-        # print(oneSite)
-        # print(df.iloc[active_cell["row"], df.columns.get_loc(active_cell["column_id"])])
         if df.iloc[selected_rows[0]][0] == '關於我轉生變成史萊姆這檔事 第二季':
             info = html.Div([html.Div(html.A([html.Img(src='assets/images/suraimu2.png')], href="https://ani.gamer.com.tw/animeVideo.php?sn=20530", target="_blank"), className='infoimage'), html.Div([html.H1([df.iloc[selected_rows[0]][0]], style={'color': 'rgba(255, 208, 0, 0.89'}), html.H3([f'監督：{df.iloc[selected_rows[0]][6]}'], style={'color': 'rgba(0, 238, 255, 0.842', 'marginTop': '25px'}), html.H3([f'製作公司：{df.iloc[selected_rows[0]][7]}'], style={'color': 'rgba(0, 238, 255, 0.842'}),
                              html.H3(['三上悟過著不起眼的人生，在隨機殺人魔肆虐下結束了三十七年生涯…… 看似如此。當他甦醒時，不僅眼睛看不見，就連耳朵也聽不到…… 面對一連串突發狀況，他意識到自己投胎轉世成「史萊姆」！儘管變成最弱魔物讓他頗有怨言，三上悟還是決定要快樂地過史萊姆生活，沒想到卻碰上天災級魔物「暴風龍維爾德拉」，命運就此出現巨大轉折──維爾德拉將他命名為「利姆路」，正要展開史萊姆式的異世界新生活時，卻被捲入哥布靈對牙狼族的紛爭之中，最後還莫名其妙當上魔物大王…… 能奪取對手能力的「捕食者」以及精通世界真理的「大賢者」，有這兩項特殊技能當武器，最強的史萊姆傳說正式展開！'], style={'marginTop': '25px'}, className='infotext')], style={'padding': '15px'})], className='info')
